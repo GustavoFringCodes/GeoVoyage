@@ -46,7 +46,8 @@ namespace GeoVoyage.Data
                 entity.Property(t => t.Id).ValueGeneratedOnAdd();
                 entity.Property(t => t.Name).HasMaxLength(100).IsRequired();
                 entity.Property(t => t.Description).HasMaxLength(1000).IsRequired();
-                entity.Property(t => t.Image).HasMaxLength(8000);
+                entity.Property(t => t.Country).HasMaxLength(200).IsRequired();
+                entity.Property(t => t.ImageUrl).HasMaxLength(8000);
             });
 
             modelBuilder.Entity<Place>(entity =>
