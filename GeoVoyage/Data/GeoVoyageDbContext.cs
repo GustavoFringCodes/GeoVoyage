@@ -152,6 +152,20 @@ namespace GeoVoyage.Data
                 entity.Property(e => e.UserAgent).HasMaxLength(500);
                 entity.HasOne(e => e.CustomerAccount).WithMany().HasForeignKey(e => e.CustomerAccountId);
             });
+
+            modelBuilder.Entity<Restaurant>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.Name).HasMaxLength(200).IsRequired();
+                entity.Property(e => e.Description).HasMaxLength(8000);
+                entity.Property(e => e.Category).HasMaxLength(200);
+                entity.Property(e => e.WorkingTimes).HasMaxLength(200);
+                entity.Property(e => e.Location).HasMaxLength(200);
+                entity.Property(e => e.ImageUrl).HasMaxLength(8000);
+                entity.Property(e => e.Social).HasMaxLength(8000);
+                entity.Property(e => e.Number).HasMaxLength(200);
+            });
         }
     }
 }
