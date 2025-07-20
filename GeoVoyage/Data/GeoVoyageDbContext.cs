@@ -10,12 +10,10 @@ namespace GeoVoyage.Data
         {
         }
 
-        // Existing DbSets
         public DbSet<Dish> Dishes { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Place> Places { get; set; }
-
-        // New DbSets
+        public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<CustomerAccount> CustomerAccounts { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<ContactMessage> ContactMessages { get; set; }
